@@ -8,17 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		80AD9FBE5BC81BEE99E3E862 /* Pods_Some_Cool_Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD5B2E41A211039A4149877 /* Pods_Some_Cool_Pods.framework */; };
+		8439B53D1F066AE200CAF398 /* PodsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439B53C1F066AE200CAF398 /* PodsSelectionViewController.swift */; };
+		8439B53F1F06707D00CAF398 /* PodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439B53E1F06707D00CAF398 /* PodsTableViewCell.swift */; };
+		8439B5421F06A57F00CAF398 /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439B5411F06A57F00CAF398 /* RequestSender.swift */; };
 		844FE7091F05B38000EA2D07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844FE7081F05B38000EA2D07 /* AppDelegate.swift */; };
 		844FE70B1F05B38000EA2D07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844FE70A1F05B38000EA2D07 /* ViewController.swift */; };
 		844FE70E1F05B38000EA2D07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844FE70C1F05B38000EA2D07 /* Main.storyboard */; };
 		844FE7101F05B38000EA2D07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844FE70F1F05B38000EA2D07 /* Assets.xcassets */; };
 		844FE7131F05B38000EA2D07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844FE7111F05B38000EA2D07 /* LaunchScreen.storyboard */; };
+		8466C9521F07C84A00635FD4 /* PodsSelectionModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466C9511F07C84A00635FD4 /* PodsSelectionModel .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2FD5B2E41A211039A4149877 /* Pods_Some_Cool_Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Some_Cool_Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A35D17E8A737AEB6E41644A /* Pods-Some Cool Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Some Cool Pods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Some Cool Pods/Pods-Some Cool Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7D527716135CDF52FA8142EE /* Pods-Some Cool Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Some Cool Pods.release.xcconfig"; path = "Pods/Target Support Files/Pods-Some Cool Pods/Pods-Some Cool Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8439B53C1F066AE200CAF398 /* PodsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodsSelectionViewController.swift; sourceTree = "<group>"; };
+		8439B53E1F06707D00CAF398 /* PodsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodsTableViewCell.swift; sourceTree = "<group>"; };
+		8439B5411F06A57F00CAF398 /* RequestSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
 		844FE7051F05B38000EA2D07 /* Some Cool Pods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Some Cool Pods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		844FE7081F05B38000EA2D07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844FE70A1F05B38000EA2D07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +33,7 @@
 		844FE70F1F05B38000EA2D07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844FE7121F05B38000EA2D07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844FE7141F05B38000EA2D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8466C9511F07C84A00635FD4 /* PodsSelectionModel .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PodsSelectionModel .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8439B5401F06A15900CAF398 /* Presentation layer */ = {
+			isa = PBXGroup;
+			children = (
+				844FE70C1F05B38000EA2D07 /* Main.storyboard */,
+				8439B5431F06A65C00CAF398 /* Greeting */,
+				8439B5441F06A67900CAF398 /* Pod Selection  */,
+			);
+			name = "Presentation layer";
+			sourceTree = "<group>";
+		};
+		8439B5431F06A65C00CAF398 /* Greeting */ = {
+			isa = PBXGroup;
+			children = (
+				844FE70A1F05B38000EA2D07 /* ViewController.swift */,
+			);
+			name = Greeting;
+			sourceTree = "<group>";
+		};
+		8439B5441F06A67900CAF398 /* Pod Selection  */ = {
+			isa = PBXGroup;
+			children = (
+				8466C9531F07C84E00635FD4 /* Model */,
+				8439B53E1F06707D00CAF398 /* PodsTableViewCell.swift */,
+				8439B53C1F066AE200CAF398 /* PodsSelectionViewController.swift */,
+			);
+			name = "Pod Selection ";
+			sourceTree = "<group>";
+		};
 		844FE6FC1F05B38000EA2D07 = {
 			isa = PBXGroup;
 			children = (
@@ -70,14 +106,30 @@
 		844FE7071F05B38000EA2D07 /* Some Cool Pods */ = {
 			isa = PBXGroup;
 			children = (
+				8439B5401F06A15900CAF398 /* Presentation layer */,
+				8466C9501F07C00F00635FD4 /* Service layer */,
 				844FE7081F05B38000EA2D07 /* AppDelegate.swift */,
-				844FE70A1F05B38000EA2D07 /* ViewController.swift */,
-				844FE70C1F05B38000EA2D07 /* Main.storyboard */,
 				844FE70F1F05B38000EA2D07 /* Assets.xcassets */,
 				844FE7111F05B38000EA2D07 /* LaunchScreen.storyboard */,
 				844FE7141F05B38000EA2D07 /* Info.plist */,
 			);
 			path = "Some Cool Pods";
+			sourceTree = "<group>";
+		};
+		8466C9501F07C00F00635FD4 /* Service layer */ = {
+			isa = PBXGroup;
+			children = (
+				8439B5411F06A57F00CAF398 /* RequestSender.swift */,
+			);
+			name = "Service layer";
+			sourceTree = "<group>";
+		};
+		8466C9531F07C84E00635FD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8466C9511F07C84A00635FD4 /* PodsSelectionModel .swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		B827CDF7F0E21C284355CFE1 /* Frameworks */ = {
@@ -213,7 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				844FE70B1F05B38000EA2D07 /* ViewController.swift in Sources */,
+				8439B53D1F066AE200CAF398 /* PodsSelectionViewController.swift in Sources */,
+				8439B5421F06A57F00CAF398 /* RequestSender.swift in Sources */,
 				844FE7091F05B38000EA2D07 /* AppDelegate.swift in Sources */,
+				8439B53F1F06707D00CAF398 /* PodsTableViewCell.swift in Sources */,
+				8466C9521F07C84A00635FD4 /* PodsSelectionModel .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +437,7 @@
 				844FE7191F05B38000EA2D07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
