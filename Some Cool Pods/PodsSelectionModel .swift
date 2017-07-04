@@ -9,25 +9,46 @@
 import Foundation
 import UIKit
 
+
+protocol PodsSelectionModelDelegate: class {
+    weak var tableView: UITableView! {get}
+}
+
+
 class PodsSelectionModel {
     
+    // init
     init(delegate: PodsSelectionModelDelegate) {
         self.delegate = delegate
     }
     
-    let delegate: PodsSelectionModelDelegate
+    // TO DO: Fabric
+    let dataService: PodsDataProvider = PodsDataProviderImp()
+    //
+    weak var delegate: PodsSelectionModelDelegate?
     var allLoadedPods = [Pod]() {
-        didSet {
-            DispatchQueue.main.sync {
-                self.delegate.tableView.reloadData()
+        willSet {
+            DispatchQueue.main.async {
+                if self.delegate != nil {
+                    self.delegate!.tableView.reloadData()
+                }
             }
+        }
+    }
+    
+    func startLoadingPods() {
+        dataService.getLatestPods() { pods, error in
+            guard error == nil else {
+                // error handling
+                return
+            }
+            
+            self.allLoadedPods = pods 
+            
         }
     }
 }
 
-protocol PodsSelectionModelDelegate {
-    weak var tableView: UITableView! {get}
-}
 
 
 class Pod {
@@ -36,10 +57,10 @@ class Pod {
     let version: String
     let summary: String
     let authors: String
-    let link: URL
-    let sourceGit: URL
+    let link: String
+    let sourceGit: String
     
-    init(id: String, version: String, summary: String, authors: String, link: URL, sourceGit: URL) {
+    init(id: String, version: String, summary: String, authors: String, link: String, sourceGit: String) {
         self.id = id
         self.version = version
         self.summary = summary

@@ -23,9 +23,8 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate 
     // Lifedcycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
+        // TV setup
         tableView.dataSource = self
-        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
         
@@ -33,15 +32,14 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate 
         tableView.emptyDataSetSource = self
         
         // Deleting separators if nil content
-        self.tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
+        
+        // Load init
+        podsSelectionModel.startLoadingPods()
     }
     
 }
 
-// MARK: TV Delegate
-extension PodsSelectionViewController: UITableViewDelegate {
-    
-}
 
 // MARK: TV Data Source
 extension PodsSelectionViewController: UITableViewDataSource {
@@ -51,27 +49,33 @@ extension PodsSelectionViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return podsSelectionModel.allLoadedPods.count
-        return 10
+        return podsSelectionModel.allLoadedPods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "pod cell", for: indexPath) as! MGSwipeTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pod cell", for: indexPath) as! PodsTableViewCell
         
-        cell.backgroundColor = GradientColor(.leftToRight, frame: cell.frame, colors: [FlatRed(),FlatWhite()])
+        // cell content setup        
+        let pod = podsSelectionModel.allLoadedPods[indexPath.row]
+        cell.idLabel.text = pod.id
+        cell.autorsLabel.text = pod.authors
+        cell.summaryLabel.text = pod.summary
+        
+        
         
         // left buttons
-        cell.leftButtons = [MGSwipeButton(title: "Ok?", icon: nil, backgroundColor: FlatMint())]
-        cell.leftSwipeSettings.transition = .border
-        
-        // right buttons
-        cell.rightButtons = [MGSwipeButton(title: "Yep Man", icon: nil, backgroundColor: FlatYellow())]
-        cell.rightSwipeSettings.transition = .drag
+//        cell.leftButtons = [MGSwipeButton(title: "Ok?", icon: nil, backgroundColor: FlatMint())]
+//        cell.leftSwipeSettings.transition = .border
+//
+//        // right buttons
+//        cell.rightButtons = [MGSwipeButton(title: "Yep Man", icon: nil, backgroundColor: FlatYellow())]
+//        cell.rightSwipeSettings.transition = .drag
         return cell
     }
 }
 
-// DZN Delegate 
+
+// DZN DataSource
 extension PodsSelectionViewController: DZNEmptyDataSetSource {
     
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {

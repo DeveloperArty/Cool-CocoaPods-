@@ -17,6 +17,9 @@
 		844FE7101F05B38000EA2D07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844FE70F1F05B38000EA2D07 /* Assets.xcassets */; };
 		844FE7131F05B38000EA2D07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844FE7111F05B38000EA2D07 /* LaunchScreen.storyboard */; };
 		8466C9521F07C84A00635FD4 /* PodsSelectionModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466C9511F07C84A00635FD4 /* PodsSelectionModel .swift */; };
+		8466C9551F08514100635FD4 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466C9541F08514100635FD4 /* Parser.swift */; };
+		8466C9581F0852D000635FD4 /* PodsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466C9571F0852D000635FD4 /* PodsDataProvider.swift */; };
+		8466C95A1F08535B00635FD4 /* PodsDataProviderImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466C9591F08535B00635FD4 /* PodsDataProviderImp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		844FE7121F05B38000EA2D07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844FE7141F05B38000EA2D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8466C9511F07C84A00635FD4 /* PodsSelectionModel .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PodsSelectionModel .swift"; sourceTree = "<group>"; };
+		8466C9541F08514100635FD4 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		8466C9571F0852D000635FD4 /* PodsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodsDataProvider.swift; sourceTree = "<group>"; };
+		8466C9591F08535B00635FD4 /* PodsDataProviderImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodsDataProviderImp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				8466C9531F07C84E00635FD4 /* Model */,
-				8439B53E1F06707D00CAF398 /* PodsTableViewCell.swift */,
-				8439B53C1F066AE200CAF398 /* PodsSelectionViewController.swift */,
+				8466C95B1F0928B100635FD4 /* Controller */,
 			);
 			name = "Pod Selection ";
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			children = (
 				8439B5401F06A15900CAF398 /* Presentation layer */,
 				8466C9501F07C00F00635FD4 /* Service layer */,
+				8466C9561F0852B300635FD4 /* Core layer */,
 				844FE7081F05B38000EA2D07 /* AppDelegate.swift */,
 				844FE70F1F05B38000EA2D07 /* Assets.xcassets */,
 				844FE7111F05B38000EA2D07 /* LaunchScreen.storyboard */,
@@ -119,7 +125,8 @@
 		8466C9501F07C00F00635FD4 /* Service layer */ = {
 			isa = PBXGroup;
 			children = (
-				8439B5411F06A57F00CAF398 /* RequestSender.swift */,
+				8466C9571F0852D000635FD4 /* PodsDataProvider.swift */,
+				8466C9591F08535B00635FD4 /* PodsDataProviderImp.swift */,
 			);
 			name = "Service layer";
 			sourceTree = "<group>";
@@ -130,6 +137,24 @@
 				8466C9511F07C84A00635FD4 /* PodsSelectionModel .swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		8466C9561F0852B300635FD4 /* Core layer */ = {
+			isa = PBXGroup;
+			children = (
+				8466C9541F08514100635FD4 /* Parser.swift */,
+				8439B5411F06A57F00CAF398 /* RequestSender.swift */,
+			);
+			name = "Core layer";
+			sourceTree = "<group>";
+		};
+		8466C95B1F0928B100635FD4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8439B53E1F06707D00CAF398 /* PodsTableViewCell.swift */,
+				8439B53C1F066AE200CAF398 /* PodsSelectionViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		B827CDF7F0E21C284355CFE1 /* Frameworks */ = {
@@ -267,9 +292,12 @@
 				844FE70B1F05B38000EA2D07 /* ViewController.swift in Sources */,
 				8439B53D1F066AE200CAF398 /* PodsSelectionViewController.swift in Sources */,
 				8439B5421F06A57F00CAF398 /* RequestSender.swift in Sources */,
+				8466C95A1F08535B00635FD4 /* PodsDataProviderImp.swift in Sources */,
 				844FE7091F05B38000EA2D07 /* AppDelegate.swift in Sources */,
+				8466C9581F0852D000635FD4 /* PodsDataProvider.swift in Sources */,
 				8439B53F1F06707D00CAF398 /* PodsTableViewCell.swift in Sources */,
 				8466C9521F07C84A00635FD4 /* PodsSelectionModel .swift in Sources */,
+				8466C9551F08514100635FD4 /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
