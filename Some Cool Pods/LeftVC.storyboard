@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Sk-Ks-bhc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Left View Controllerr-->
+        <scene sceneID="xaF-3g-TI5">
+            <objects>
+                <viewController storyboardIdentifier="leftVC" id="3Sk-Ks-bhc" customClass="LeftViewControllerr" customModule="Some_Cool_Pods" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Stt-Do-EFm"/>
+                        <viewControllerLayoutGuide type="bottom" id="lIm-9B-YQq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0yD-KZ-4W1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rXA-Vs-wRo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" rowHeight="119" id="83I-1u-hhf" customClass="LeftVCTableViewCell" customModule="Some_Cool_Pods" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="119"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="83I-1u-hhf" id="8t9-40-taK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menuElementName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlC-Dl-MEQ">
+                                                    <rect key="frame" x="28" y="28" width="289" height="63"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MlC-Dl-MEQ" firstAttribute="leading" secondItem="8t9-40-taK" secondAttribute="leadingMargin" constant="20" id="buN-jO-QN3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MlC-Dl-MEQ" secondAttribute="trailing" constant="50" id="cfA-6S-W1g"/>
+                                                <constraint firstItem="MlC-Dl-MEQ" firstAttribute="top" secondItem="8t9-40-taK" secondAttribute="topMargin" constant="20" id="nJ2-2c-JXy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MlC-Dl-MEQ" secondAttribute="bottom" constant="20" id="wgW-4L-UEY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="menuElementNameLabel" destination="MlC-Dl-MEQ" id="Tbs-4Q-tyI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rXA-Vs-wRo" secondAttribute="trailing" id="MFU-O2-39F"/>
+                            <constraint firstItem="rXA-Vs-wRo" firstAttribute="top" secondItem="Stt-Do-EFm" secondAttribute="bottom" id="WhO-lT-Yf4"/>
+                            <constraint firstItem="lIm-9B-YQq" firstAttribute="top" secondItem="rXA-Vs-wRo" secondAttribute="bottom" id="Zfe-dT-vSn"/>
+                            <constraint firstItem="rXA-Vs-wRo" firstAttribute="leading" secondItem="0yD-KZ-4W1" secondAttribute="leading" id="d4g-X4-aEq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="rXA-Vs-wRo" id="CQP-dr-uuX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ShW-i6-XH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="125.4872563718141"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,15 +7,33 @@
 //
 
 import UIKit
+import PKRevealController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var revealController: PKRevealController?
+    var navigationController: UINavigationController?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let leftVCStoryboard = UIStoryboard(name: "LeftVC", bundle: nil)
+        
+        let leftVC = leftVCStoryboard.instantiateViewController(withIdentifier: "leftVC")
+        let frontVC = mainStoryboard.instantiateViewController(withIdentifier: "PodsSelection")
+        self.navigationController = UINavigationController(rootViewController: frontVC)
+            
+        
+        self.revealController = PKRevealController(frontViewController: navigationController,
+                                                   leftViewController: leftVC)
+        self.revealController?.delegate = self
+        self.revealController?.animationDuration = 0.25
+        self.window?.rootViewController = self.revealController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -40,7 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
+// MARK: - PKReveal Delegate 
+
+extension AppDelegate: PKRevealing {
+    
+    
+}

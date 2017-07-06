@@ -10,6 +10,7 @@ import UIKit
 import ChameleonFramework
 import MGSwipeTableCell
 import DZNEmptyDataSet
+import PKRevealController
 
 class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate {
 
@@ -18,11 +19,12 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate 
     
     // Properties 
     let emptyBackgroundColor: UIColor = RandomFlatColor()
-    lazy var podsSelectionModel: PodsSelectionModel = PodsSelectionModel(delegate: self)
+    fileprivate lazy var podsSelectionModel: PodsSelectionModel = PodsSelectionModel(delegate: self)
     
     // Lifedcycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // TV setup
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
