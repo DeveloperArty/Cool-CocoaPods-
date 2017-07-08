@@ -9,6 +9,6 @@
 import Foundation
 
 protocol PodsDataProvider {
-    func getLatestPods(complertionHandler: @escaping (_ pods: [Pod], _ error: Error?) -> Void ) 
+    func getTestIOSPods(complertionHandler: @escaping (_ pods: [Pod], _ error: Error?) -> Void ) 
 }
 

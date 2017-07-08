@@ -13,7 +13,7 @@ class PodsDataProviderImp: PodsDataProvider {
     let requestSender = RequestSender()
     let parser = ApiDataParser()
     
-    func getLatestPods(complertionHandler: @escaping (_ pods: [Pod], _ error: Error?) -> Void ) {
+    func getTestIOSPods(complertionHandler: @escaping (_ pods: [Pod], _ error: Error?) -> Void ) {
         requestSender.sendRequest() { response in
             self.parser.parseResponce(responce: response, completionHander: complertionHandler)
         }

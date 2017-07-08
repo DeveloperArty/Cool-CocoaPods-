@@ -37,7 +37,7 @@ class PodsSelectionModel {
     }
     
     func startLoadingPods() {
-        dataService.getLatestPods() { pods, error in
+        dataService.getTestIOSPods() { pods, error in
             guard error == nil else {
                 // error handling
                 return
@@ -50,23 +50,3 @@ class PodsSelectionModel {
 }
 
 
-
-class Pod {
-    
-    let id: String
-    let version: String
-    let summary: String
-    let authors: String
-    let link: String
-    let sourceGit: String
-    
-    init(id: String, version: String, summary: String, authors: String, link: String, sourceGit: String) {
-        self.id = id
-        self.version = version
-        self.summary = summary
-        self.authors = authors
-        self.link = link
-        self.sourceGit = sourceGit
-    }
-    
-}

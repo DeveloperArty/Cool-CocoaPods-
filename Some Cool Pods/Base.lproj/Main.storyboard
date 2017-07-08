@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pod cell" rowHeight="131" id="lLh-Dd-Ahk" customClass="PodsTableViewCell" customModule="Some_Cool_Pods" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pod cell" rowHeight="131" id="lLh-Dd-Ahk" customClass="PodsTableViewCell" customModule="Some_Cool_Pods" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="131"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lLh-Dd-Ahk" id="nWR-iy-mYm">
@@ -45,7 +45,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ij-1t-SaG">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ij-1t-SaG">
                                                     <rect key="frame" x="16" y="94" width="73" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -82,14 +82,55 @@
                             <constraint firstItem="RH0-1G-eT0" firstAttribute="top" secondItem="sQ0-EB-5YH" secondAttribute="bottom" id="qmk-eG-XLq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="iOS Pods" id="ePF-Q5-FxK"/>
+                    <navigationItem key="navigationItem" title="iOS Pods" id="ePF-Q5-FxK">
+                        <barButtonItem key="leftBarButtonItem" title="3stripesHere" id="HgV-LN-P7f">
+                            <connections>
+                                <action selector="openMenu:" destination="rOE-XF-ga3" id="ix2-fO-EOw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="RH0-1G-eT0" id="hjv-HO-8Sx"/>
+                        <segue destination="OFf-26-GJN" kind="show" identifier="podDetail" id="WkA-6v-u0H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f80-2g-zpu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3645.5999999999999" y="-103.89805097451276"/>
+            <point key="canvasLocation" x="3553" y="-105"/>
+        </scene>
+        <!--Pod Name-->
+        <scene sceneID="q9i-wi-xmr">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="OFf-26-GJN" customClass="PodDetailViewController" customModule="Some_Cool_Pods" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s86-Fu-4fL"/>
+                        <viewControllerLayoutGuide type="bottom" id="p2Y-D6-JCB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0dB-fU-nBE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-8R-glE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ccf-8R-glE" firstAttribute="leading" secondItem="0dB-fU-nBE" secondAttribute="leading" id="2QK-Ye-rQf"/>
+                            <constraint firstItem="p2Y-D6-JCB" firstAttribute="top" secondItem="ccf-8R-glE" secondAttribute="bottom" id="Ick-QZ-xr4"/>
+                            <constraint firstAttribute="trailing" secondItem="ccf-8R-glE" secondAttribute="trailing" id="lo1-GG-M91"/>
+                            <constraint firstItem="ccf-8R-glE" firstAttribute="top" secondItem="s86-Fu-4fL" secondAttribute="bottom" id="p76-Kx-Zbk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pod Name" id="c6V-s5-1nh"/>
+                    <connections>
+                        <outlet property="tableView" destination="ccf-8R-glE" id="pxZ-G1-q3P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8NQ-OQ-UPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4433" y="-106"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vNt-yB-cNw">

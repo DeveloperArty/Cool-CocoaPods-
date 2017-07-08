@@ -20,14 +20,13 @@ class PodsTableViewCell: MGSwipeTableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         setupUI()
     }
     
     func setupUI() {
         
-        let color = RandomFlatColor()
-        self.backgroundColor = GradientColor(.diagonal, frame: self.frame, colors: [color, FlatWhite()])
+        let color = FlatBlack()
+        self.backgroundColor = color 
         idLabel.textColor = ContrastColorOf(color, returnFlat: true)
         autorsLabel.textColor = ContrastColorOf(color, returnFlat: true)
         summaryLabel.textColor = ContrastColorOf(color, returnFlat: false)

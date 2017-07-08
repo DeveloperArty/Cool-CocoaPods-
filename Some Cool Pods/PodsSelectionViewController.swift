@@ -8,7 +8,6 @@
 
 import UIKit
 import ChameleonFramework
-import MGSwipeTableCell
 import DZNEmptyDataSet
 import PKRevealController
 
@@ -27,6 +26,7 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate 
         
         // TV setup
         tableView.dataSource = self
+        tableView.delegate = self 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
         
@@ -39,6 +39,19 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate 
         // Load init
         podsSelectionModel.startLoadingPods()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if let vc = segue.destination as? PodDetailViewController {
+            vc.pod = sender as? Pod 
+        }
+    }
+    
+    // UI Envents 
+    @IBAction func openMenu(_ sender: UIBarButtonItem) {
+        revealController.enterPresentationMode(animated: true, completion: nil)
+    }
+    
     
 }
 
@@ -63,19 +76,18 @@ extension PodsSelectionViewController: UITableViewDataSource {
         cell.autorsLabel.text = pod.authors
         cell.summaryLabel.text = pod.summary
         
-        
-        
-        // left buttons
-//        cell.leftButtons = [MGSwipeButton(title: "Ok?", icon: nil, backgroundColor: FlatMint())]
-//        cell.leftSwipeSettings.transition = .border
-//
-//        // right buttons
-//        cell.rightButtons = [MGSwipeButton(title: "Yep Man", icon: nil, backgroundColor: FlatYellow())]
-//        cell.rightSwipeSettings.transition = .drag
         return cell
     }
 }
 
+extension PodsSelectionViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let pod = self.podsSelectionModel.allLoadedPods[indexPath.row]
+        self.performSegue(withIdentifier: "podDetail", sender: pod)
+    }
+}
 
 // DZN DataSource
 extension PodsSelectionViewController: DZNEmptyDataSetSource {
