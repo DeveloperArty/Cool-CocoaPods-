@@ -24,6 +24,7 @@ class RequestSender {
         }
         
         Alamofire.request(apiUrl).responseJSON() { responce in
+            print(responce.data)
             parseHander(responce) 
         }
     }

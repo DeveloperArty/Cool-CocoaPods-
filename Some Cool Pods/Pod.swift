@@ -25,5 +25,4 @@ class Pod {
         self.link = link
         self.sourceGit = sourceGit
     }
-    
 }

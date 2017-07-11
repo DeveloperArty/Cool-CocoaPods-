@@ -8,6 +8,7 @@
 
 import UIKit
 import PKRevealController
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,13 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        // revealController
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let leftVCStoryboard = UIStoryboard(name: "LeftVC", bundle: nil)
         
         let leftVC = leftVCStoryboard.instantiateViewController(withIdentifier: "leftVC")
         let frontVC = mainStoryboard.instantiateViewController(withIdentifier: "PodsSelection")
         self.navigationController = UINavigationController(rootViewController: frontVC)
-            
         
         self.revealController = PKRevealController(frontViewController: navigationController,
                                                    leftViewController: leftVC)
@@ -37,6 +38,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = self.revealController
         self.window?.makeKeyAndVisible()
         
+        // custom navBar
+        let navigationBarAppearance = UINavigationBar.appearance()
+        // elememts clolors
+        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: FlatWhite()]
+        navigationBarAppearance.tintColor = FlatWhite()
+        // backgroundColor
+        navigationBarAppearance.barTintColor = FlatBlackDark()
+        
+        // statusBar 
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 

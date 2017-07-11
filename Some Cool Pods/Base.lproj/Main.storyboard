@@ -83,7 +83,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="iOS Pods" id="ePF-Q5-FxK">
-                        <barButtonItem key="leftBarButtonItem" title="3stripesHere" id="HgV-LN-P7f">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="HgV-LN-P7f">
                             <connections>
                                 <action selector="openMenu:" destination="rOE-XF-ga3" id="ix2-fO-EOw"/>
                             </connections>
@@ -110,15 +110,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-8R-glE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="567" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-8R-glE">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="567" id="EDf-E3-Hjq">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="567"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EDf-E3-Hjq" id="m7O-lz-8JY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Loading Readme, please wait.." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z1a-ho-pDR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ccf-8R-glE" firstAttribute="leading" secondItem="0dB-fU-nBE" secondAttribute="leading" id="2QK-Ye-rQf"/>
                             <constraint firstItem="p2Y-D6-JCB" firstAttribute="top" secondItem="ccf-8R-glE" secondAttribute="bottom" id="Ick-QZ-xr4"/>
+                            <constraint firstItem="z1a-ho-pDR" firstAttribute="leading" secondItem="0dB-fU-nBE" secondAttribute="leading" id="Wgm-po-FWr"/>
+                            <constraint firstAttribute="trailing" secondItem="z1a-ho-pDR" secondAttribute="trailing" id="XbL-yI-ng4"/>
+                            <constraint firstItem="p2Y-D6-JCB" firstAttribute="top" secondItem="z1a-ho-pDR" secondAttribute="bottom" id="eIt-78-ujc"/>
+                            <constraint firstItem="z1a-ho-pDR" firstAttribute="top" secondItem="s86-Fu-4fL" secondAttribute="bottom" id="kIk-P8-WdS"/>
                             <constraint firstAttribute="trailing" secondItem="ccf-8R-glE" secondAttribute="trailing" id="lo1-GG-M91"/>
                             <constraint firstItem="ccf-8R-glE" firstAttribute="top" secondItem="s86-Fu-4fL" secondAttribute="bottom" id="p76-Kx-Zbk"/>
                         </constraints>
@@ -126,18 +146,19 @@
                     <navigationItem key="navigationItem" title="Pod Name" id="c6V-s5-1nh"/>
                     <connections>
                         <outlet property="tableView" destination="ccf-8R-glE" id="pxZ-G1-q3P"/>
+                        <outlet property="textView" destination="z1a-ho-pDR" id="PSc-A4-tPo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NQ-OQ-UPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4433" y="-106"/>
+            <point key="canvasLocation" x="4432.8000000000002" y="-106.59670164917542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vNt-yB-cNw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="byc-cD-D3Q" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EA5-gp-pLi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EA5-gp-pLi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -151,4 +172,7 @@
             <point key="canvasLocation" x="2704.8000000000002" y="-104.7976011994003"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Menu" width="32" height="32"/>
+    </resources>
 </document>

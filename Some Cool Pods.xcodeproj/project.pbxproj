@@ -25,6 +25,8 @@
 		849D77351F11244B00F4D8B9 /* PodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D77341F11244B00F4D8B9 /* PodDetailViewController.swift */; };
 		849D773B1F112B2200F4D8B9 /* PodDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D773A1F112B2200F4D8B9 /* PodDetailModel.swift */; };
 		849D773E1F112C7B00F4D8B9 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D773D1F112C7B00F4D8B9 /* Pod.swift */; };
+		849D77421F11306B00F4D8B9 /* PodDetailsDataProvider .swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D77411F11306B00F4D8B9 /* PodDetailsDataProvider .swift */; };
+		849D77451F1130AD00F4D8B9 /* PodDetailsDataProviderImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D77441F1130AD00F4D8B9 /* PodDetailsDataProviderImp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		849D77341F11244B00F4D8B9 /* PodDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodDetailViewController.swift; sourceTree = "<group>"; };
 		849D773A1F112B2200F4D8B9 /* PodDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodDetailModel.swift; sourceTree = "<group>"; };
 		849D773D1F112C7B00F4D8B9 /* Pod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
+		849D77411F11306B00F4D8B9 /* PodDetailsDataProvider .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PodDetailsDataProvider .swift"; sourceTree = "<group>"; };
+		849D77441F1130AD00F4D8B9 /* PodDetailsDataProviderImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodDetailsDataProviderImp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		8466C9501F07C00F00635FD4 /* Service layer */ = {
 			isa = PBXGroup;
 			children = (
+				849D77431F11307100F4D8B9 /* GitHub Api   */,
 				849D77401F112DA600F4D8B9 /* Cocoa Docs Api */,
 			);
 			name = "Service layer";
@@ -202,6 +207,15 @@
 				8466C9591F08535B00635FD4 /* PodsDataProviderImp.swift */,
 			);
 			name = "Cocoa Docs Api";
+			sourceTree = "<group>";
+		};
+		849D77431F11307100F4D8B9 /* GitHub Api   */ = {
+			isa = PBXGroup;
+			children = (
+				849D77411F11306B00F4D8B9 /* PodDetailsDataProvider .swift */,
+				849D77441F1130AD00F4D8B9 /* PodDetailsDataProviderImp.swift */,
+			);
+			name = "GitHub Api  ";
 			sourceTree = "<group>";
 		};
 		B827CDF7F0E21C284355CFE1 /* Frameworks */ = {
@@ -341,12 +355,14 @@
 				8439B5421F06A57F00CAF398 /* RequestSender.swift in Sources */,
 				849D773B1F112B2200F4D8B9 /* PodDetailModel.swift in Sources */,
 				8466C95A1F08535B00635FD4 /* PodsDataProviderImp.swift in Sources */,
+				849D77421F11306B00F4D8B9 /* PodDetailsDataProvider .swift in Sources */,
 				849D773E1F112C7B00F4D8B9 /* Pod.swift in Sources */,
 				844FE7091F05B38000EA2D07 /* AppDelegate.swift in Sources */,
 				849D77351F11244B00F4D8B9 /* PodDetailViewController.swift in Sources */,
 				8466C9581F0852D000635FD4 /* PodsDataProvider.swift in Sources */,
 				8439B53F1F06707D00CAF398 /* PodsTableViewCell.swift in Sources */,
 				8467C6241F0EDB4000906B05 /* LeftViewController.swift in Sources */,
+				849D77451F1130AD00F4D8B9 /* PodDetailsDataProviderImp.swift in Sources */,
 				8466C9521F07C84A00635FD4 /* PodsSelectionModel .swift in Sources */,
 				8466C9551F08514100635FD4 /* Parser.swift in Sources */,
 				848EDBAD1F0EF8BE001D8405 /* LeftVCTableViewCell.swift in Sources */,

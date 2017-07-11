@@ -17,7 +17,7 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate 
     @IBOutlet weak var tableView: UITableView!
     
     // Properties 
-    let emptyBackgroundColor: UIColor = RandomFlatColor()
+    let emptyBackgroundColor: UIColor = FlatBlack()
     fileprivate lazy var podsSelectionModel: PodsSelectionModel = PodsSelectionModel(delegate: self)
     
     // Lifedcycle

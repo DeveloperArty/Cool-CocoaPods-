@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,29 +23,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rXA-Vs-wRo">
+                            <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rXA-Vs-wRo">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" rowHeight="119" id="83I-1u-hhf" customClass="LeftVCTableViewCell" customModule="Some_Cool_Pods" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="119"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" rowHeight="94" id="83I-1u-hhf" customClass="LeftVCTableViewCell" customModule="Some_Cool_Pods" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="83I-1u-hhf" id="8t9-40-taK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menuElementName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlC-Dl-MEQ">
-                                                    <rect key="frame" x="28" y="28" width="289" height="63"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elementName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlC-Dl-MEQ">
+                                                    <rect key="frame" x="28" y="27.5" width="198.5" height="39.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" red="0.12638588249999999" green="0.1263821125" blue="0.12638427320000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8x-Gv-YJh">
+                                                    <rect key="frame" x="242" y="32.5" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="BFh-A3-Ezq"/>
+                                                        <constraint firstAttribute="width" secondItem="r8x-Gv-YJh" secondAttribute="height" multiplier="1:1" id="T07-Zf-ExA"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Arrow">
+                                                        <color key="titleColor" red="0.9122849703" green="0.93141710759999996" blue="0.93603825569999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="MlC-Dl-MEQ" firstAttribute="centerY" secondItem="8t9-40-taK" secondAttribute="centerY" id="61C-zR-2Mt"/>
+                                                <constraint firstItem="r8x-Gv-YJh" firstAttribute="centerY" secondItem="MlC-Dl-MEQ" secondAttribute="centerY" id="LwI-L7-ebo"/>
                                                 <constraint firstItem="MlC-Dl-MEQ" firstAttribute="leading" secondItem="8t9-40-taK" secondAttribute="leadingMargin" constant="20" id="buN-jO-QN3"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="MlC-Dl-MEQ" secondAttribute="trailing" constant="50" id="cfA-6S-W1g"/>
-                                                <constraint firstItem="MlC-Dl-MEQ" firstAttribute="top" secondItem="8t9-40-taK" secondAttribute="topMargin" constant="20" id="nJ2-2c-JXy"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="MlC-Dl-MEQ" secondAttribute="bottom" constant="20" id="wgW-4L-UEY"/>
+                                                <constraint firstItem="r8x-Gv-YJh" firstAttribute="leading" secondItem="MlC-Dl-MEQ" secondAttribute="trailing" constant="15" id="eyJ-6Y-yql"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -71,4 +83,7 @@
             <point key="canvasLocation" x="53.600000000000001" y="125.4872563718141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Arrow" width="32" height="32"/>
+    </resources>
 </document>

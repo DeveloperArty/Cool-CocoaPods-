@@ -15,10 +15,14 @@ class PodDetailViewController: UIViewController {
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textView: UITextView!
     
     // Properties
     var pod: Pod? = nil
     let emptyBackgroundColor = RandomFlatColor()
+    
+    // TO DO: Factory
+    let podDetailModel: PodDetailsDataProvider = PodDetailsDataProviderImp()
 
     // Lifecycle
     override func viewDidLoad() {
@@ -33,9 +37,27 @@ class PodDetailViewController: UIViewController {
         
         // Deleting separators if nil content
         tableView.tableFooterView = UIView()
+        
+        // initializing content load
+        
+        if let git = self.pod?.sourceGit {
+            podDetailModel.test(gitLink: git) { readme in
+                DispatchQueue.main.async {
+                    self.textView.text = readme 
+                }
+            }
+        }
+        
+        // UI Setup 
+        setupUI()
     }
     
-    
+    func setupUI() {
+        
+        if let pod = self.pod {
+            self.navigationItem.title = pod.id 
+        }
+    }
 }
 
 // MARK: TV Data Source

@@ -13,24 +13,28 @@ import ChameleonFramework
 
 class LeftViewControllerr: UIViewController {
     
-    fileprivate let menuButtonNames = ["iOS", "MAC OS"]
-    let mainColor = FlatMintDark()
-    let secondColor = FlatLime()
+    fileprivate let menuButtonNames = ["iOS", "MAC OS", "Info"]
+    let mainColor = FlatBlackDark()
+    let secondColor = FlatWhite()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = FlatBlackDark()
+        
+        // creating indent
         let header = tableView.headerView(forSection: 0)
         header?.backgroundView?.backgroundColor = UIColor.clear
         
+        // TV Setup
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.backgroundColor = GradientColor(.leftToRight, frame: tableView.frame, colors: [mainColor,
-                                                                                                   secondColor])
+        self.tableView.backgroundColor = FlatBlackDark()
         
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,7 +48,7 @@ extension LeftViewControllerr: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return menuButtonNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
