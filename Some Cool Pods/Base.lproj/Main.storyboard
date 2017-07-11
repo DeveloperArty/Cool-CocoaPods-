@@ -98,23 +98,30 @@
             </objects>
             <point key="canvasLocation" x="3553" y="-105"/>
         </scene>
-        <!--View Controller-->
+        <!--Info-->
         <scene sceneID="NJx-qL-kAO">
             <objects>
-                <viewController id="O9l-el-Zz5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="info" id="O9l-el-Zz5" customClass="InfoViewController" customModule="Some_Cool_Pods" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b1A-Zf-Qba"/>
                         <viewControllerLayoutGuide type="bottom" id="fTw-yz-8HK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wx8-fN-Igk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12638588249999999" green="0.1263821125" blue="0.12638427320000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Info" id="YUq-lf-ccX">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="Caj-eW-BjE">
+                            <connections>
+                                <action selector="toMenu:" destination="O9l-el-Zz5" id="kgb-a0-hcT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nG-Ci-TJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3617" y="703"/>
+            <point key="canvasLocation" x="3575" y="703"/>
         </scene>
         <!--Pod Name-->
         <scene sceneID="q9i-wi-xmr">
@@ -176,7 +183,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="byc-cD-D3Q" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EA5-gp-pLi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EA5-gp-pLi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -188,6 +195,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYr-PK-Eqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2704.8000000000002" y="-104.7976011994003"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3Cn-kl-Sxl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tjw-4n-CUo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="PkJ-Nn-nfp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O9l-el-Zz5" kind="relationship" relationship="rootViewController" id="MBl-lK-0ux"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aX-tn-7VR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2705" y="703"/>
         </scene>
     </scenes>
     <resources>

@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var revealController: PKRevealController?
-    var navigationController: UINavigationController?
+    var podSelectionNC: UINavigationController?
+    var infoNC: UINavigationController?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -26,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let leftVC = leftVCStoryboard.instantiateViewController(withIdentifier: "leftVC")
         let frontVC = mainStoryboard.instantiateViewController(withIdentifier: "PodsSelection")
-        self.navigationController = UINavigationController(rootViewController: frontVC)
+        self.podSelectionNC = UINavigationController(rootViewController: frontVC)
         
-        self.revealController = PKRevealController(frontViewController: navigationController,
+        self.revealController = PKRevealController(frontViewController: podSelectionNC,
                                                    leftViewController: leftVC)
         self.revealController?.setMinimumWidth((self.window?.frame.width)! - 90,
                                                maximumWidth: (self.window?.frame.width)! - 90 ,

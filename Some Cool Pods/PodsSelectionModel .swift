@@ -25,7 +25,7 @@ class PodsSelectionModel {
     // TO DO: Fabric
     let dataService: PodsDataProvider = PodsDataProviderImp()
     //
-    weak var delegate: PodsSelectionModelDelegate?
+    var delegate: PodsSelectionModelDelegate?
     var allLoadedPods = [Pod]() {
         willSet {
             DispatchQueue.main.async {
