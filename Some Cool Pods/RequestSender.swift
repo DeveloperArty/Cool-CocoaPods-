@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class RequestSender {
     
-    private let apiUrlString =  "http://search.cocoapods.org/api/v1/pods.picky.hash.json?query=on:ios"
+    private let apiUrlString =  "http://search.cocoapods.org/api/pods"
     
     public func sendRequest(parseHander: @escaping (_ responce: DataResponse<Any>) -> Void) {
         

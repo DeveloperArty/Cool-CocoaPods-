@@ -11,6 +11,7 @@ import UIKit
 class LeftVCTableViewCell: UITableViewCell {
 
     @IBOutlet weak var menuElementNameLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

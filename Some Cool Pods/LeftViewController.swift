@@ -13,9 +13,10 @@ import ChameleonFramework
 
 class LeftViewControllerr: UIViewController {
     
-    fileprivate let menuButtonNames = ["iOS", "MAC OS", "Info"]
+    fileprivate let menuButtonNames = ["iOS", "MAC OS", "INFO"]
     let mainColor = FlatBlackDark()
     let secondColor = FlatWhite()
+    lazy var model = LeftViewColtrollerModel()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -52,12 +53,22 @@ extension LeftViewControllerr: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row != 2 {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! LeftVCTableViewCell
         
         cell.menuElementNameLabel.text = self.menuButtonNames[indexPath.row]
         cell.menuElementNameLabel.textColor = ContrastColorOf(mainColor, returnFlat: true)
         
         return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! LeftVCTableViewCell
+            
+            cell.menuElementNameLabel.text = self.menuButtonNames[indexPath.row]
+            cell.menuElementNameLabel.textColor = ContrastColorOf(mainColor, returnFlat: true)
+            
+            return cell
+        }
     }
 }
 
@@ -67,10 +78,20 @@ extension LeftViewControllerr: UITableViewDelegate {
         return 200
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 2 {
+            return 172
+        } else { return 72 }
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 200))
         header.backgroundColor = ClearColor()
         return header
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        model.didSelectMenuItem(itemRow: indexPath.row)
     }
 }
