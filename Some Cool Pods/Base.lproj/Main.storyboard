@@ -24,7 +24,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RH0-1G-eT0">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.12638588249999999" green="0.1263821125" blue="0.12638427320000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pod cell" rowHeight="131" id="lLh-Dd-Ahk" customClass="PodsTableViewCell" customModule="Some_Cool_Pods" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="131"/>
@@ -33,14 +33,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="131"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjL-9X-ywr">
-                                                    <rect key="frame" x="16" y="16" width="42" height="41"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mjL-9X-ywr">
+                                                    <rect key="frame" x="16" y="16" width="343" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obF-A8-Kwf">
-                                                    <rect key="frame" x="16" y="65" width="60" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authors" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obF-A8-Kwf">
+                                                    <rect key="frame" x="16" y="65" width="343" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -57,11 +57,11 @@
                                                 <constraint firstItem="obF-A8-Kwf" firstAttribute="top" secondItem="mjL-9X-ywr" secondAttribute="bottom" constant="8" id="9XN-t8-Z3z"/>
                                                 <constraint firstItem="2Ij-1t-SaG" firstAttribute="top" secondItem="obF-A8-Kwf" secondAttribute="bottom" constant="8" id="CmK-wd-2OJ"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="2Ij-1t-SaG" secondAttribute="trailing" constant="8" id="CpT-LT-MB6"/>
-                                                <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="obF-A8-Kwf" secondAttribute="trailing" constant="291" id="PMn-5X-ytc"/>
                                                 <constraint firstItem="2Ij-1t-SaG" firstAttribute="leading" secondItem="mjL-9X-ywr" secondAttribute="leading" id="SMe-d8-2hI"/>
                                                 <constraint firstItem="mjL-9X-ywr" firstAttribute="top" secondItem="nWR-iy-mYm" secondAttribute="topMargin" constant="8" id="UjC-7v-FKv"/>
+                                                <constraint firstItem="obF-A8-Kwf" firstAttribute="trailing" secondItem="mjL-9X-ywr" secondAttribute="trailing" id="XSl-e5-LeO"/>
                                                 <constraint firstItem="obF-A8-Kwf" firstAttribute="leading" secondItem="mjL-9X-ywr" secondAttribute="leading" id="dRB-S5-GyH"/>
-                                                <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="mjL-9X-ywr" secondAttribute="trailing" constant="309" id="gSU-E4-2ij"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mjL-9X-ywr" secondAttribute="trailing" constant="8" id="gSU-E4-2ij"/>
                                                 <constraint firstItem="mjL-9X-ywr" firstAttribute="leading" secondItem="nWR-iy-mYm" secondAttribute="leadingMargin" constant="8" id="oqD-9Q-q2j"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -151,9 +151,14 @@
                             </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Loading Readme, please wait.." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z1a-ho-pDR">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.12638588249999999" green="0.1263821125" blue="0.12638427320000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <color key="textColor" red="0.99517858029999995" green="0.76436686519999997" blue="0.041325315830000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="O8q-6n-eHA" appends="YES" id="Z4s-Q0-S4r"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -175,6 +180,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NQ-OQ-UPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="O8q-6n-eHA">
+                    <connections>
+                        <action selector="backgroundTap:" destination="OFf-26-GJN" id="H2K-zN-YN6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4432.8000000000002" y="-106.59670164917542"/>
         </scene>

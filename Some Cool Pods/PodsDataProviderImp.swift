@@ -13,9 +13,12 @@ class PodsDataProviderImp: PodsDataProvider {
     let requestSender = RequestSender()
     let parser = ApiDataParser()
     
-    func getTestIOSPods(complertionHandler: @escaping (_ pods: [Pod], _ error: Error?) -> Void ) {
-        requestSender.sendRequest() { response in
-            self.parser.parseResponce(responce: response, completionHander: complertionHandler)
+    func getPods(forOS: OS, start_at: Int, complertionHandler: @escaping (_ pods: [Pod], _ error: String?) -> Void ) {
+        requestSender.sendRequest(forOS: forOS, start_at: start_at) { response, error in
+            
+            let errorDiscription = error?.localizedDescription
+             
+            self.parser.parseResponce(responce: response, errorDiscription: errorDiscription, completionHander: complertionHandler)
         }
     }
 }

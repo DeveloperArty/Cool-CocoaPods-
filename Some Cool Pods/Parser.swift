@@ -12,18 +12,19 @@ import Alamofire
 
 class ApiDataParser {
   
-    func parseResponce(responce: DataResponse<Any>, completionHander: @escaping (_ pods: [Pod],_ error: Error?) -> Void ) {
+    func parseResponce(responce: Data?, errorDiscription: String?, completionHander: @escaping (_ pods: [Pod],_ error: String?) -> Void ) {
         var result = [Pod]()
         
-        guard responce.error == nil else {
-            print(responce.error!.localizedDescription)
+        guard errorDiscription == nil else {
+            print(errorDiscription!)
             return
         }
-        guard let data = responce.data else {
+        guard let data = responce else {
             print("Error: responce does not contain data")
             return
         }
         let json = JSON(data: data)
+        print(json)
         
         let allocations = json["allocations"][0][5]
         
@@ -46,7 +47,7 @@ class ApiDataParser {
             result.append(pod)
         }
         
-        completionHander(result, responce.error)
+        completionHander(result, errorDiscription)
 
     }
 

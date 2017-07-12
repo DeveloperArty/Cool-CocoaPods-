@@ -58,6 +58,11 @@ class PodDetailViewController: UIViewController {
             self.navigationItem.title = pod.id 
         }
     }
+    
+    // UI Events
+    @IBAction func backgroundTap(_ sender: Any) {
+        view.endEditing(true)
+    }
 }
 
 // MARK: TV Data Source

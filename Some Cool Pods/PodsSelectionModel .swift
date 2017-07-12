@@ -12,6 +12,9 @@ import UIKit
 
 protocol PodsSelectionModelDelegate: class {
     weak var tableView: UITableView! {get}
+    var currentOS: OS {get}
+    
+    func presentAlert(message: String)
 }
 
 
@@ -24,10 +27,13 @@ class PodsSelectionModel {
     
     // TO DO: Fabric
     let dataService: PodsDataProvider = PodsDataProviderImp()
-    //
     var delegate: PodsSelectionModelDelegate?
+    //
+    var numberOfLoadedPods = 0
     var allLoadedPods = [Pod]() {
         willSet {
+            print("pods loaded total: \(newValue.count)")
+            self.numberOfLoadedPods = newValue.count
             DispatchQueue.main.async {
                 if self.delegate != nil {
                     self.delegate!.tableView.reloadData()
@@ -37,14 +43,12 @@ class PodsSelectionModel {
     }
     
     func startLoadingPods() {
-        dataService.getTestIOSPods() { pods, error in
+        dataService.getPods(forOS: (delegate?.currentOS)!, start_at: self.numberOfLoadedPods) { pods, error in
+            self.allLoadedPods = pods
             guard error == nil else {
-                // error handling
+                self.delegate?.presentAlert(message: error!)
                 return
             }
-            
-            self.allLoadedPods = pods 
-            
         }
     }
 }

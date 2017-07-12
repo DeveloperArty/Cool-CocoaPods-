@@ -18,6 +18,15 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate 
     
     // Properties 
     let emptyBackgroundColor: UIColor = FlatBlack()
+    var currentOS: OS = .iOS {
+        willSet {
+            if newValue == .iOS {
+                self.navigationItem.title = "iOS Pods"
+            } else {
+                self.navigationItem.title = "OS X Pods"
+            }
+        }
+    }
     fileprivate lazy var podsSelectionModel: PodsSelectionModel = PodsSelectionModel(delegate: self)
     
     // Lifedcycle
@@ -50,6 +59,15 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate 
     // UI Envents 
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
         revealController.enterPresentationMode(animated: true, completion: nil)
+    }
+    
+    func presentAlert(message: String) {
+        let alertC = UIAlertController(title: "Unable to load data",
+                                       message: message,
+                                       preferredStyle: .alert)
+        let actionRepeat = UIAlertAction(title: "Try again",
+                                         style: .default,
+                                         handler: { action in self.podsSelectionModel.startLoadingPods() })
     }
     
     

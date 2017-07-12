@@ -8,7 +8,12 @@
 
 import Foundation
 
+enum OS {
+    case iOS
+    case MACOS
+}
+
 protocol PodsDataProvider {
-    func getTestIOSPods(complertionHandler: @escaping (_ pods: [Pod], _ error: Error?) -> Void ) 
+    func getPods(forOS: OS, start_at: Int, complertionHandler: @escaping (_ pods: [Pod], _ error: String?) -> Void )
 }
 
