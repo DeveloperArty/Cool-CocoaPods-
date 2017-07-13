@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 import SwiftyJSON
 
 
@@ -49,10 +48,6 @@ class RequestSender {
         
         let mutableRequest = NSMutableURLRequest(url: apiUrl)
         mutableRequest.addValue("application/vnd.cocoapods.org+picky.hash.json; version=1", forHTTPHeaderField: "Accept")
-        
-//        Alamofire.request(apiUrl).responseJSON() { responce in
-//            parseHander(responce) 
-//        }
         
         let task = URLSession.shared.dataTask(with: mutableRequest as URLRequest) { responce,_, error in
             
