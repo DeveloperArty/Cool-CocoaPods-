@@ -102,7 +102,15 @@ extension LeftViewControllerr: UITableViewDelegate {
         var vc: UIViewController
         
         if indexPath.row != 2 {
-            vc = appDelegate.podSelectionNC!
+            var podSelectionVC = appDelegate.podSelectionVC as! SupportsOS
+            
+            let podSelectionNC = UINavigationController(rootViewController: podSelectionVC as! UIViewController)
+            if indexPath.row == 0 {
+                podSelectionVC.currentOS = .iOS
+            } else {
+                podSelectionVC.currentOS = .MACOS
+            }
+            vc = podSelectionNC 
         } else {
             
             if let infoNC = appDelegate.infoNC {

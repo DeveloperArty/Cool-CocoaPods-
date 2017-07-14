@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var revealController: PKRevealController?
-    var podSelectionNC: UINavigationController?
+    var podSelectionVC: UIViewController?
     var infoNC: UINavigationController?
 
 
@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let leftVC = leftVCStoryboard.instantiateViewController(withIdentifier: "leftVC")
         let frontVC = mainStoryboard.instantiateViewController(withIdentifier: "PodsSelection")
-        self.podSelectionNC = UINavigationController(rootViewController: frontVC)
+        self.podSelectionVC = frontVC
+        let podSelectionNC = UINavigationController(rootViewController: frontVC)
         
         self.revealController = PKRevealController(frontViewController: podSelectionNC,
                                                    leftViewController: leftVC)

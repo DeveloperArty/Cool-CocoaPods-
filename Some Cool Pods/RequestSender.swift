@@ -22,7 +22,7 @@ class RequestSender {
     private let queryStart_atStringBase = "start-at="
     private let and = "&"
     
-    private var amount = 30
+    private var amount = 15
     var start_at = 0
     
     

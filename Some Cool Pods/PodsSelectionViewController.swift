@@ -11,7 +11,7 @@ import ChameleonFramework
 import DZNEmptyDataSet
 import PKRevealController
 
-class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate {
+class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate, SupportsOS {
 
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +20,7 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate 
     let emptyBackgroundColor: UIColor = FlatBlack()
     var currentOS: OS = .iOS {
         willSet {
+            self.podsSelectionModel.startLoadingPods()
             if newValue == .iOS {
                 self.navigationItem.title = "iOS Pods"
             } else {

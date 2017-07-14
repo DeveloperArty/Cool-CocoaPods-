@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import MGSwipeTableCell
 import ChameleonFramework
 
-class PodsTableViewCell: MGSwipeTableCell {
+class PodsTableViewCell: UITableViewCell {
     
     // Outlets
     @IBOutlet weak var idLabel: UILabel!
