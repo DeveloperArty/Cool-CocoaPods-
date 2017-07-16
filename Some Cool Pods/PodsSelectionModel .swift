@@ -44,6 +44,11 @@ class PodsSelectionModel {
     
     func startLoadingPods() {
         dataService.getPods(forOS: (delegate?.currentOS)!, start_at: self.numberOfLoadedPods) { pods, error in
+            if pods.isEmpty {
+                DispatchQueue.main.async {
+                    self.delegate?.presentAlert(message: "Unable to access server. Please try again later")
+                }
+            }
             self.allLoadedPods.append(contentsOf: pods)
             guard error == nil else {
                 print("an error occured, presenting alert..")

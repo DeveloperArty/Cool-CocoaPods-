@@ -19,6 +19,7 @@ class LoaderTableViewCell: UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = UIColor.clear
+        self.separatorInset = UIEdgeInsets(top: 0, left: self.frame.width, bottom: 0, right: 0)
     }
 
 }

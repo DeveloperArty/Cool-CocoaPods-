@@ -44,6 +44,7 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate,
         
         // DZN
         tableView.emptyDataSetSource = self
+        tableView.separatorColor = FlatWhite()
         
         // Deleting separators if nil content
         tableView.tableFooterView = UIView()
@@ -121,6 +122,12 @@ extension PodsSelectionViewController: UITableViewDelegate {
         if tableView.cellForRow(at: indexPath) is PodsTableViewCell {
             let pod = self.podsSelectionModel.allLoadedPods[indexPath.row]
             self.performSegue(withIdentifier: "podDetail", sender: pod)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if cell is LoaderTableViewCell && indexPath.row != 0  {
+            self.podsSelectionModel.startLoadingPods()
         }
     }
 }

@@ -22,24 +22,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CocoaCup" translatesAutoresizingMaskIntoConstraints="NO" id="ydz-EC-Xfd">
-                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UlI-D1-0gZ" userLabel="Center">
+                                <rect key="frame" x="100" y="333.5" width="175" height="0.0"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ydz-EC-Xfd" secondAttribute="height" multiplier="1:1" id="dUN-HK-A0k"/>
-                                    <constraint firstAttribute="height" constant="200" id="rs8-dE-MER"/>
+                                    <constraint firstAttribute="width" constant="175" id="dXR-4Y-dLt"/>
+                                    <constraint firstAttribute="height" id="zC4-dA-tcw"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CocoaCup" translatesAutoresizingMaskIntoConstraints="NO" id="ydz-EC-Xfd">
+                                <rect key="frame" x="125" y="183.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Xue-ED-vjF"/>
+                                    <constraint firstAttribute="width" secondItem="ydz-EC-Xfd" secondAttribute="height" multiplier="1:1" id="jps-MJ-Oe3"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ydz-EC-Xfd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dra-OG-2OZ"/>
-                            <constraint firstItem="ydz-EC-Xfd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="xuY-jA-6Xm"/>
+                            <constraint firstItem="ydz-EC-Xfd" firstAttribute="trailing" secondItem="UlI-D1-0gZ" secondAttribute="trailing" id="2QC-Hr-0xM"/>
+                            <constraint firstItem="UlI-D1-0gZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="36m-RC-QfA"/>
+                            <constraint firstItem="UlI-D1-0gZ" firstAttribute="top" secondItem="ydz-EC-Xfd" secondAttribute="bottom" id="qS6-BV-1hO"/>
+                            <constraint firstItem="UlI-D1-0gZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tO7-Qm-NrI"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
