@@ -40,6 +40,8 @@ class RequestSender {
         
         let urlString = apiStringBase + queryOsString + and + queryAmountStringBase + "\(amount)" + and + queryStart_atStringBase + "\(start_at)"
         
+        print(urlString)
+        
         
         guard let apiUrl = URL(string: urlString) else {
             print("unable to get to requested url")

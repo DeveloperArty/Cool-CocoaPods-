@@ -44,12 +44,17 @@ class PodsSelectionModel {
     
     func startLoadingPods() {
         dataService.getPods(forOS: (delegate?.currentOS)!, start_at: self.numberOfLoadedPods) { pods, error in
-            self.allLoadedPods = pods
+            self.allLoadedPods.append(contentsOf: pods)
             guard error == nil else {
+                print("an error occured, presenting alert..")
                 self.delegate?.presentAlert(message: error!)
                 return
             }
         }
+    }
+    
+    func resetData() {
+        self.allLoadedPods = [Pod]()
     }
 }
 

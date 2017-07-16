@@ -28,6 +28,7 @@
 		849D77421F11306B00F4D8B9 /* PodDetailsDataProvider .swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D77411F11306B00F4D8B9 /* PodDetailsDataProvider .swift */; };
 		849D77451F1130AD00F4D8B9 /* PodDetailsDataProviderImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D77441F1130AD00F4D8B9 /* PodDetailsDataProviderImp.swift */; };
 		84B739441F18C0AD00FCDE08 /* OS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B739431F18C0AD00FCDE08 /* OS.swift */; };
+		84B739461F1BABA600FCDE08 /* LoaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B739451F1BABA600FCDE08 /* LoaderTableViewCell.swift */; };
 		84BBC6F31F14F852006A573A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBC6F21F14F852006A573A /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		849D77411F11306B00F4D8B9 /* PodDetailsDataProvider .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PodDetailsDataProvider .swift"; sourceTree = "<group>"; };
 		849D77441F1130AD00F4D8B9 /* PodDetailsDataProviderImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodDetailsDataProviderImp.swift; sourceTree = "<group>"; };
 		84B739431F18C0AD00FCDE08 /* OS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OS.swift; sourceTree = "<group>"; };
+		84B739451F1BABA600FCDE08 /* LoaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderTableViewCell.swift; sourceTree = "<group>"; };
 		84BBC6F21F14F852006A573A /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				8466C9531F07C84E00635FD4 /* Model */,
-				8439B53C1F066AE200CAF398 /* PodsSelectionViewController.swift */,
-				8439B53E1F06707D00CAF398 /* PodsTableViewCell.swift */,
+				84B739481F1BAC5700FCDE08 /* Controller */,
+				84B739471F1BABA900FCDE08 /* Cells */,
 			);
 			name = "Pods Selection ";
 			sourceTree = "<group>";
@@ -222,6 +224,23 @@
 				849D77441F1130AD00F4D8B9 /* PodDetailsDataProviderImp.swift */,
 			);
 			name = "GitHub Api  ";
+			sourceTree = "<group>";
+		};
+		84B739471F1BABA900FCDE08 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8439B53E1F06707D00CAF398 /* PodsTableViewCell.swift */,
+				84B739451F1BABA600FCDE08 /* LoaderTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		84B739481F1BAC5700FCDE08 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8439B53C1F066AE200CAF398 /* PodsSelectionViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		84BBC6F41F14F87C006A573A /* Info */ = {
@@ -371,6 +390,7 @@
 				8466C95A1F08535B00635FD4 /* PodsDataProviderImp.swift in Sources */,
 				84B739441F18C0AD00FCDE08 /* OS.swift in Sources */,
 				849D77421F11306B00F4D8B9 /* PodDetailsDataProvider .swift in Sources */,
+				84B739461F1BABA600FCDE08 /* LoaderTableViewCell.swift in Sources */,
 				849D773E1F112C7B00F4D8B9 /* Pod.swift in Sources */,
 				844FE7091F05B38000EA2D07 /* AppDelegate.swift in Sources */,
 				849D77351F11244B00F4D8B9 /* PodDetailViewController.swift in Sources */,

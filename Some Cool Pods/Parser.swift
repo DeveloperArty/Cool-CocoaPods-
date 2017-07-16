@@ -23,7 +23,6 @@ class ApiDataParser {
             return
         }
         let json = JSON(data: data)
-        print(json)
         
         let allocations = json["allocations"][0][5]
         

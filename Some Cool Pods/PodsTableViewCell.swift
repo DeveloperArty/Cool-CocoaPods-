@@ -25,7 +25,8 @@ class PodsTableViewCell: UITableViewCell {
     func setupUI() {
         
         let color = FlatBlack()
-        self.backgroundColor = color 
+        self.backgroundColor = color
+        
         idLabel.textColor = ContrastColorOf(color, returnFlat: true)
         autorsLabel.textColor = ContrastColorOf(color, returnFlat: true)
         summaryLabel.textColor = ContrastColorOf(color, returnFlat: false)

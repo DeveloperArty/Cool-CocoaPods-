@@ -18,8 +18,10 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate,
     
     // Properties 
     let emptyBackgroundColor: UIColor = FlatBlack()
+    fileprivate let footerHeight: CGFloat = 100
     var currentOS: OS = .iOS {
         willSet {
+            self.podsSelectionModel.resetData() 
             self.podsSelectionModel.startLoadingPods()
             if newValue == .iOS {
                 self.navigationItem.title = "iOS Pods"
@@ -69,6 +71,10 @@ class PodsSelectionViewController: UIViewController, PodsSelectionModelDelegate,
         let actionRepeat = UIAlertAction(title: "Try again",
                                          style: .default,
                                          handler: { action in self.podsSelectionModel.startLoadingPods() })
+        alertC.addAction(actionRepeat)
+        self.present(alertC,
+                     animated: true,
+                     completion: nil)
     }
     
     
@@ -83,19 +89,28 @@ extension PodsSelectionViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return podsSelectionModel.allLoadedPods.count
+        return podsSelectionModel.allLoadedPods.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "pod cell", for: indexPath) as! PodsTableViewCell
         
-        // cell content setup        
-        let pod = podsSelectionModel.allLoadedPods[indexPath.row]
-        cell.idLabel.text = pod.id
-        cell.autorsLabel.text = pod.authors
-        cell.summaryLabel.text = pod.summary
-        
-        return cell
+        if indexPath.row < podsSelectionModel.allLoadedPods.count {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "pod cell", for: indexPath) as! PodsTableViewCell
+            
+            // cell content setup
+            let pod = podsSelectionModel.allLoadedPods[indexPath.row]
+            cell.idLabel.text = pod.id
+            cell.autorsLabel.text = pod.authors
+            cell.summaryLabel.text = pod.summary
+            
+            return cell
+        } else {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "loaderCell", for: indexPath) as! LoaderTableViewCell
+            cell.activityIndicator.startAnimating()
+            return cell
+        }
     }
 }
 
@@ -103,8 +118,10 @@ extension PodsSelectionViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let pod = self.podsSelectionModel.allLoadedPods[indexPath.row]
-        self.performSegue(withIdentifier: "podDetail", sender: pod)
+        if tableView.cellForRow(at: indexPath) is PodsTableViewCell {
+            let pod = self.podsSelectionModel.allLoadedPods[indexPath.row]
+            self.performSegue(withIdentifier: "podDetail", sender: pod)
+        }
     }
 }
 
