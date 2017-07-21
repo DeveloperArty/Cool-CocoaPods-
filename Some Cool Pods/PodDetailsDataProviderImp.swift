@@ -34,7 +34,6 @@ class PodDetailsDataProviderImp: PodDetailsDataProvider {
         let task = URLSession.shared.dataTask(with: mutableRequest as URLRequest) { (responseData,_,error) in
             
             guard error == nil else {
-                print(error?.localizedDescription)
                 return
             }
             

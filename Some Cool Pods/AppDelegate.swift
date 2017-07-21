@@ -32,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.revealController = PKRevealController(frontViewController: podSelectionNC,
                                                    leftViewController: leftVC)
-        self.revealController?.setMinimumWidth((self.window?.frame.width)! - 90,
-                                               maximumWidth: (self.window?.frame.width)! - 90 ,
+        self.revealController?.setMinimumWidth((self.window?.frame.width)! - 110,
+                                               maximumWidth: (self.window?.frame.width)! - 110 ,
                                                for: leftVC)
         self.revealController?.delegate = self
         self.revealController?.animationDuration = 0.25
